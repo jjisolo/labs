@@ -85,11 +85,10 @@ void fillfile(char filename[255]) {
 
   printf("Enter the data to the file(type `END` to stop):\n");
   do {
-	scanf("%s", input);
-	if(strcmp(input, "END") == 0)
+	if(fgets(input, sizeof(input), stdin) == NULL)
 	  break;
 
-	fprintf(file, "%s\n", input);
+	fprintf(file, "%s", input);
   } while(TRUE);
  
 

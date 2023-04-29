@@ -29,12 +29,9 @@ void fillfile(std::string& filename) {
   assert(file.is_open());
 
   std::cout << "Please enter the data for the input file(type `END` to stop):" << std::endl;
-  while(true) {
-	std::cin >> input;
-
-	if(input == "END")
+  for(std::string line; std::getline(std::cin, line);) {
+	if(line == "END")
 	  break;
-
 	file << input << "\n";
   }
 
